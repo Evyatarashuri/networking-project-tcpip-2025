@@ -1,0 +1,6 @@
+msg_id,app_protocol,src_app,dst_app,message,timestamp
+1,HTTP,client_browser,web_server,GET /index.html,0.015
+2,HTTP,client_browser,web_server,GET /products,0.120
+3,HTTP,client_browser,web_server,POST /login,0.532
+4,HTTP,web_server,client_browser,200 OK,0.870
+5,HTTP,client_browser,web_server,GET /cart,1.053
