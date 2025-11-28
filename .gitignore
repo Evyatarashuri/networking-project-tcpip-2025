@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# MacOS system files
+.DS_Store
+
+# VSCode settings
+.vscode/
+
+# pycache inside notebooks
+*/__pycache__/
+
+# Compiled shared objects
+*.so
+
+# Logs
+*.log
