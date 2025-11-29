@@ -8,13 +8,13 @@ def listen(sock):
         except:
             break
 
-sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-sock.connect(("127.0.0.1", 8080))
+sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM) # create socket
+sock.connect(("127.0.0.1", 8080)) # connect to server at port 8080
 
-username = input("Enter username: ")
-sock.send(username.encode())
+username = input("Enter username: ") # get username
+sock.send(username.encode()) # send hashed username to server
 
-threading.Thread(target=listen, args=(sock,), daemon=True).start()
+threading.Thread(target=listen, args=(sock,), daemon=True).start() # start listening thread
 
 while True:
     msg = input()
