@@ -36,7 +36,7 @@ This project demonstrates a complete **TCP/IP networking workflow**, including p
 
 ---
 
-## How to Run:
+## How to Download:
 
 1. Clone the repository:
 
@@ -55,8 +55,73 @@ This project demonstrates a complete **TCP/IP networking workflow**, including p
 3. Install the required packages:
 
    ```bash
-   pip install -r requirements.txt
+   pip3 install -r requirements.txt
    ```
+
+---
+
+## How to Run:
+
+### Part 1 – Encapsulation & Traffic Analysis
+
+1. Open the Jupyter Notebook:
+
+   ```bash
+   jupyter notebook
+   ```
+
+2. Navigate to:
+
+   ```
+   part1_csv_encapsulation/encapsulation_notebook.ipynb
+   ```
+
+3. Run all cells:
+
+- Loads CSV input
+- Generates encapsulated TCP messages
+- Saves results
+- Produces Wireshark-capturable traffic
+
+4. Open the generated `.pcapng` file in Wireshark for analysis.
+
+### Part 2 – TCP Chat Application
+
+**Start the Server**
+
+Run the server:
+
+```bash
+python3 part2_chat_application/server.py
+```
+
+**Run Multiple Clients**
+
+Each client runs in a separate terminal window:
+
+```bash
+python3 part2_chat_application/client.py
+```
+
+You will be prompted:
+```bash
+Enter username:
+```
+
+Then users can chat in real-time:
+
+- Messages are routed via the server
+- Each client runs on its own thread
+- Wireshark captures real TCP traffic
+
+### Optional: Capture Traffic in Wireshark
+
+1. Open Wireshark and start a new capture on the loopback interface (lo0).
+2. Use the display filter:
+   ```bash
+   tcp.port == 8080
+   ```
+3. Analyze the captured packets for TCP handshake, message framing, and routing.
 
 ---
 
