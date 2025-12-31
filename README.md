@@ -6,6 +6,8 @@ This project demonstrates a complete **TCP/IP networking workflow**, including p
 
 ## Part 1 - Encapsulation & Traffic Analysis
 
+[REPORT FILE](./REPORT/part1_report.md)
+
 **Key Features:**
 - Loading application-level messages from CSV  
 - Simulating encapsulation through the **TCP/IP stack** (Application → Transport → Network → Link)  
@@ -16,6 +18,8 @@ This project demonstrates a complete **TCP/IP networking workflow**, including p
 ---
 
 ## Part 2 - TCP Chat Application
+
+[REPORT FILE](./REPORT/part2_report.md)
 
 **Key Features:**
 - TCP socket server handling **multiple clients concurrently**
