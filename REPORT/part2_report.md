@@ -194,7 +194,18 @@ Each client gets its own thread → enabling simultaneous communication.
 This satisfies the requirement:
 "The server must support at least 5 clients concurrently."
 
-## 7. Summary
+## 7. Database Choice
+
+The server maintains an in-memory dictionary that stores the mapping between each connected username and its associated TCP socket.
+
+```bash
+clients = {
+    username: client_socket
+   }
+```
+This allows efficient message routing without the overhead of a persistent database, suitable for the chat application's real-time requirements.
+
+## 8. Summary
 This part demonstrates:
 
 - Multiplexing of multiple TCP connections
