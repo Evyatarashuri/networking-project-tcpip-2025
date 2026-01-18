@@ -14,7 +14,7 @@ The input CSV contains the following columns:
 - `timestamp`
 
 **Creation Method**
-The application-level messages in the `group05_http_input.csv` file were generated using Artificial Intelligence (Gemini). The AI was prompted to create a realistic sequence of HTTP requests (GET, POST) and responses (200 OK) that follow the required schema, ensuring valid timestamps and logical flow between the `client_browser` and `web_server` applications.
+The application-level messages in the `http_input.csv` file were generated using Artificial Intelligence (Gemini). The AI was prompted to create a realistic sequence of HTTP requests (GET, POST) and responses (200 OK) that follow the required schema, ensuring valid timestamps and logical flow between the `client_browser` and `web_server` applications.
 
 ![CSV Input Preview](../part1_csv_encapsulation/screenshots/csv_preview.png)
 
@@ -82,7 +82,7 @@ During the transmission Wireshark captures the packets on the loopback interface
 - TCP opens a connection using the standard 3-way handshake (SYN → SYN/ACK → ACK).
 - Each message from the CSV is sent as TCP payload and appears in Wireshark as a **PSH/ACK** packet.
 - Wireshark shows the full path of the message: IP header → TCP header → payload.
-- When the script finishes, the connection is closed with a FIN/ACK or RST (depending on how the socket is terminated).
+- When the script finishes, the connection is closed using a standard FIN/ACK termination sequence.
 
 This section demonstrates the full flow: opening the TCP session, sending data, and observing the packets in Wireshark.
 
@@ -90,7 +90,7 @@ This section demonstrates the full flow: opening the TCP session, sending data, 
 Wireshark was configured to listen on the loopback interface (lo0).  
 Before sending the packets, a capture filter `tcp.port == 8080` was applied to record only the relevant traffic.  
 Once the notebook transmitted the encapsulated messages, Wireshark captured the TCP handshake, payload packets, and connection termination.  
-The resulting capture was saved as `group05_encapsulation_capture.pcapng`.
+The resulting capture was saved as `encapsulation_capture.pcapng`.
 
 
 ## 5. Wireshark Traffic Analysis
@@ -170,7 +170,7 @@ The Wireshark capture verifies:
 - Valid payload structure inside TCP segments  
 - Accurate mapping between notebook output and real network traffic
 
-![Wireshark Capture](../part1_csv_encapsulation/screenshots/wireshark_capture_part1.jpeg)
+![Wireshark Capture](../part1_csv_encapsulation/screenshots/wireshark_capture_part1.png)
 
 
 ## 6. Summary

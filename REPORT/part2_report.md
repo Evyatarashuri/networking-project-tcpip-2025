@@ -194,7 +194,7 @@ Each client gets its own thread → enabling simultaneous communication.
 This satisfies the requirement:
 "The server must support at least 5 clients concurrently."
 
-## 7. Database Choice
+## 7. Database Choice - State Management (In-Memory)
 
 The server maintains an in-memory dictionary that stores the mapping between each connected username and its associated TCP socket.
 

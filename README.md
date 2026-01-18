@@ -1,5 +1,7 @@
 # TCP/IP Networking Project 2025
 
+> This project was completed as an individual assignment (single student).
+
 This project demonstrates a complete **TCP/IP networking workflow**, including packet encapsulation, traffic generation, and multi-client communication over TCP.
 
 ---
@@ -11,7 +13,7 @@ This project demonstrates a complete **TCP/IP networking workflow**, including p
 **Key Features:**
 - Loading application-level messages from CSV  
 - Simulating encapsulation through the **TCP/IP stack** (Application → Transport → Network → Link)  
-- Sending custom **TCP packets** over the loopback interface  
+- Sending application data over TCP sockets on the loopback interface
 - Capturing real traffic with **Wireshark**  
 - Inspecting headers (TCP, IP) and analyzing packet flow
 
@@ -68,26 +70,32 @@ This project demonstrates a complete **TCP/IP networking workflow**, including p
 
 ### Part 1 – Encapsulation & Traffic Analysis
 
-1. Open the Jupyter Notebook:
+1. Navigate to the directory:
+
+   ```
+   part1_csv_encapsulation/
+   ```
+
+   Open the Jupyter Notebook:
 
    ```bash
    jupyter notebook
    ```
 
-2. Navigate to:
+   Run the server:
 
-   ```
-   part1_csv_encapsulation/encapsulation_notebook.ipynb
+   ```bash
+   python3 tcp_listener.py
    ```
 
-3. Run all cells:
+   Run all cells:
 
 - Loads CSV input
 - Generates encapsulated TCP messages
 - Saves results
 - Produces Wireshark-capturable traffic
 
-4. Open the generated `.pcapng` file in Wireshark for analysis.
+   Open the generated `.pcapng` file in Wireshark for analysis.
 
 ### Part 2 – TCP Chat Application
 
@@ -140,7 +148,10 @@ Then users can chat in real-time:
 ![Jupyter Notebook](./part1_csv_encapsulation/screenshots/jupyter_encapsulation_preview.png)
 
 **Wireshark Capture:**
-![Wireshark Capture](./part1_csv_encapsulation/screenshots/wireshark_capture_part1.jpeg)
+![Wireshark Capture](./part1_csv_encapsulation/screenshots/wireshark_capture_part1.png)
+
+**Wireshark Payload:**
+![Wireshark Payload](./part1_csv_encapsulation/screenshots/wireshark_payload_psh_ack.png)
 
 ### Part 2 - TCP Chat Application
 
